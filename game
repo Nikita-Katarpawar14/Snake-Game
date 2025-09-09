@@ -1,0 +1,103 @@
+#snake water gun game
+'''This will become my first project in python'''
+'''
+Rules of the game:
+
+Snake beats Water: If one player chooses Snake and the other chooses Water, the Snake wins. 
+
+Water beats Gun: If one player chooses Water and the other chooses Gun, the Water wins. 
+
+Gun beats Snake: If one player chooses Gun and the other chooses Snake, the Gun wins. 
+
+Tie: If both players choose the same item, it's a tie.
+
+How to play:
+Two Players: The game is played between two players.
+
+Simultaneous Choice: Each player simultaneously chooses one of the three items (Snake, Water, or Gun).
+
+Reveal Choices: Once both players have chosen, they reveal their selections simultaneously.
+
+Determine the Winner: The winner is determined based on the rules outlined above.
+
+Repeat: The game can be repeated multiple times to determine the overall winne
+
+'''
+'''
+1 for snake
+-1 for water
+0 for gun
+'''
+'''
+#code starts form here
+import random
+computer = random.choice([-1 ,0 ,1])
+youstr= input("Enter your choice : ")
+youDict={"s":1, "w":-1 ,"g":0}
+reverseDict={1:"Snake", -1:"Water" , 0:"Gun"}
+
+you = youDict[youstr]
+
+print(f"You choose{reverseDict[you]}\n Computer choose{reverseDict[computer]}")
+
+if (computer==you):
+    print("Its a tie")
+    print("Thankyou for playing this game")
+
+else:    
+    if (computer == 1  and you == -1):
+        print("Computer wins\tbetter luck nice time")
+        print("Thankyou for playing this game") 
+    
+    elif (computer == -1  and you == 1):
+        print("Congratulation \tVictory")
+        print("Thankyou for playing this game")
+    
+    elif (computer == 0  and you == -1):
+        print("Computer win's\tbetter luck nice time") 
+        print("Thankyou for playing this game")
+    
+    elif (computer == -1  and you == 0):
+        print("Congratulation \tVictory")
+        print("Thankyou for playing this game")
+    
+    elif (computer == 0  and you == 1):
+        print("Computer win's\tbetter luck nice time") 
+        print("Thankyou for playing this game")   
+    
+    elif (computer == 1  and you == 0):
+        print("Congratulation \tVictory")
+        print("Thankyou for playing this game")
+    
+    else:   
+        print("Thankyou for playing this game")
+        '''
+
+import random
+def game():
+    youDict = {"s": 1, "w": -1, "g": 0}
+    reverseDict = {1: "Snake", -1: "Water", 0: "Gun"}
+
+    # Take user input
+    youstr = input("Enter your choice (s for Snake, w for Water, g for Gun): ")
+
+    # Validate input
+    if youstr not in youDict:
+        print("Invalid input. Please choose s, w, or g.")
+    else:
+        you = youDict[youstr]
+        computer = random.choice([-1, 0, 1])
+
+        print(f"You chose {reverseDict[you]}\nComputer chose {reverseDict[computer]}")
+
+        if computer == you:
+            print("It's a tie!")
+        elif (computer == 1 and you == -1) or (computer == 0 and you == 1) or (computer == -1 and you == 0):
+            print("Computer wins! Better luck next time.")
+        else:
+            print("Congratulations, you win!")
+
+        print("Thank you for playing this game.")
+game()
+game()
+game()
